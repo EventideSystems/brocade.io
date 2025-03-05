@@ -1,19 +1,26 @@
 <main class="mx-auto mt-16 max-w-7xl px-4 sm:mt-24">
   <div class="grid grid-cols-2 gap-4">
     <div class="text-center mt-6">
-      <h3>Free and open <span class="text-orange-600">product database</span></h3>
-      <h1 class="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
+      <h3 class="text-gray-800 dark:text-gray-200">Free and open <span class="text-orange-600">product database</span></h3>
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 md:text-5xl">
         Brocade.io
       </h1>
     </div>
     <div class="mx-auto mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
       <div>
         <%= form_tag(products_path, method: :get) do %>
-          <label for="query" class="block text-sm font-medium text-gray-700 text-left">Search...</label>
+          <label for="query" class="block text-sm font-medium text-gray-700 dark:text-gray-100 text-left">Search...</label>
           <div class="mt-1">
-            <%= text_field_tag :query, nil, class: 'block w-full text-2xl rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500', placeholder: 'by barcode or text' %>
+            <%= 
+              text_field_tag(
+                :query, 
+                nil, 
+                class: 'block w-full text-2xl text-gray-700 dark:text-gray-100 bg-gray-100 dark:bg-gray-700 placeholder-gray-700 dark:placeholder-gray-500 rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500', 
+                placeholder: 'by barcode or text'
+              ) 
+            %>
           </div>
-          <label for="query" class="block text-sm font-small text-gray-700 text-right">
+          <label for="query" class="block mt-1 text-sm font-small text-gray-700 dark:text-gray-100 text-right">
             ... from <%= humanize_product_count(Product.count) %>
           </label>
         <% end %>

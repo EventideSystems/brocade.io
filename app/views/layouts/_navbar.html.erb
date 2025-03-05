@@ -5,7 +5,7 @@
         <div class="flex w-full items-center justify-between md:w-auto">
           <%= link_to root_path do %>
             <span class="sr-only">Brocade.io</span>
-            <%= image_tag 'barcode.png', class: "h-8 w-auto sm:h-10", alt: "logo"%>
+            <span class="text-black dark:text-orange-400"><%= render 'barcode' %></span>
           <% end %>
           <div class="-mr-2 flex items-center md:hidden">
             <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-50 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" aria-expanded="false">
@@ -19,17 +19,17 @@
         </div>
       </div>
       <div class="hidden md:flex md:space-x-10">
-        <%= link_to 'Brocade.io', root_path, class: "font-medium text-gray-500 hover:text-gray-900" %>
-        <%= link_to 'Products', products_path, class: "font-medium text-gray-500 hover:text-gray-900" %>
+        <%= desktop_link_to 'Brocade.io', root_path %>
+        <%= desktop_link_to 'Products', products_path %>
         <%- if user_signed_in? -%>
-          <%= link_to 'Add Product', new_product_path, class: "font-medium text-gray-500 hover:text-gray-900" %>
+          <%= desktop_link_to 'Add Product', new_product_path %>
         <%- end -%>
-        <%= link_to 'Documentation', documentation_path, class: "font-medium text-gray-500 hover:text-gray-900" %>
-        <%= link_to 'Github Project', 'https://github.com/ferrisoxide/brocade.io', class: "font-medium text-gray-500 hover:text-gray-900" %>
+        <%= desktop_link_to 'Documentation', documentation_path %>
+        <%= desktop_link_to 'Github Project', 'https://github.com/EventideSystems/brocade.io', target: :blank %>
       </div>
-      <div class="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end md:space-x-10">
+      <div class="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end md:space-x-10 dark:text-white">
         <%- if user_signed_in? -%>
-          <%= link_to 'My Account', edit_user_registration_path, class: "font-medium text-gray-500 hover:text-gray-900" %>
+          <%= desktop_link_to 'My Account', edit_user_registration_path %>
         <%- end -%>
         <span class="inline-flex rounded-md shadow">
           <% if user_signed_in? %>
@@ -69,7 +69,7 @@
     <div class="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
       <div class="flex items-center justify-between px-5 pt-4">
         <div>
-          <%= image_tag 'barcode.png', class: "h-8 w-auto", alt: "logo"%>
+          <span class="text-black dark:text-white"><%= render 'barcode' %></span>
         </div>
         <div class="-mr-2">
           <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500">
@@ -82,16 +82,16 @@
         </div>
       </div>
       <div class="px-2 pt-2 pb-3">
-        <%= link_to 'Brocade.io', root_path, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900" %>
-        <%= link_to 'Products', products_path, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900" %>
+        <%= mobile_link_to 'Brocade.io', root_path %>
+        <%= mobile_link_to 'Products', products_path %>
         <%- if user_signed_in? -%>
-          <%= link_to 'Add Product', new_product_path, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900" %>
+          <%= mobile_link_to 'Add Product', new_product_path %>
         <%- end -%>
-        <%= link_to 'Documentation', documentation_path, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900" %>
-        <%= link_to 'About', documentation_path, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900" %>
+        <%= mobile_link_to 'Documentation', documentation_path %>
+        <%= mobile_link_to 'About', documentation_path %>
       </div>
       <% if user_signed_in? %>
-        <%= link_to 'My Account', edit_user_registration_path, class: "block w-full bg-gray-50 px-5 py-3 bg-orange-600 text-center font-medium text-white hover:bg-orange-700" %>
+        <%= mobile_link_to 'My Account', edit_user_registration_path %>
         <%=
           button_to(
             'Logout',

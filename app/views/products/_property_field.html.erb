@@ -7,7 +7,7 @@
       name="product[properties][<%= key %>]"
       type=<%= type_for_property(key) %>
       value="<%= product.properties[key.to_s] %>"
-      class="input is-small"
+      class="input is-small dark:bg-gray-800"
     />
     <% if unit.present? %>
       <span class="icon is-small is-right">

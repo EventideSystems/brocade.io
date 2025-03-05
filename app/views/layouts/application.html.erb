@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-full bg-gray-50">
+<html lang="en" class="h-full bg-gray-50 dark:bg-gray-950">
   <head>
     <title>Brocade</title>
     <%= csrf_meta_tags %>
@@ -11,13 +11,16 @@
     <%= javascript_importmap_tags %>
   </head>
   <body class="h-full">
-    <div class="relative overflow-hidden bg-gray-50">
+    <div class="relative overflow-hidden bg-gray-50 dark:bg-gray-950">
       <div class="relative pt-6 pb-16 sm:pb-24">
         <%= render 'layouts/navbar' %>
-        <%#= render 'layouts/wip_warning' -%>
         <%# NOTE: required by Devise - needs rework %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <%- if notice %>
+          <p class="notice"><%= notice %></p>
+        <%- end -%>
+        <%- if alert %>
+          <p class="alert m-4 p-1 bg-red-100"><%= alert %></p>
+        <%- end -%>
       </div>
       <%= yield %>
     </div>
