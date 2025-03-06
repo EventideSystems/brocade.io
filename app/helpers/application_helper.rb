@@ -16,4 +16,8 @@ module ApplicationHelper
     options[:class] = MOBILE_LINK_TO_CLASS
     link_to(*, **options)
   end
+
+  def google_analytics_id
+    Rails.configuration.google_analytics_id
+  end
 end
