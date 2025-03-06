@@ -21,9 +21,9 @@
       <div class="hidden md:flex md:space-x-10">
         <%= desktop_link_to 'Brocade.io', root_path %>
         <%= desktop_link_to 'Products', products_path %>
-        <%- if user_signed_in? -%>
-          <%= desktop_link_to 'Add Product', new_product_path %>
-        <%- end -%>
+        <%# <%- if user_signed_in? -%>
+          <%#= desktop_link_to 'Add Product', new_product_path %>
+        <%#- end -%>
         <%= desktop_link_to 'Documentation', documentation_path %>
         <%= desktop_link_to 'Github Project', 'https://github.com/EventideSystems/brocade.io', target: :blank %>
       </div>
@@ -42,7 +42,7 @@
               )
             %>
           <% else %>
-            <%=
+            <%#=
               link_to(
                 'Sign in',
                 new_user_session_path,
@@ -101,7 +101,7 @@
           )
         %>
       <% else %>
-        <%=
+        <%#=
           link_to(
             'Sign in',
             new_user_session_path,

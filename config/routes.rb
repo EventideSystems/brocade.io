@@ -3,15 +3,17 @@
 Rails.application.routes.draw do
   # mount Rswag::Ui::Engine => '/api-docs'
   # mount Rswag::Api::Engine => '/api-docs'
-  use_doorkeeper do
-    skip_controllers :authorizations, :applications,
-                     :authorized_applications
-  end
+  # use_doorkeeper do
+  #   skip_controllers :authorizations, :applications,
+  #                    :authorized_applications
+  # end
 
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
-  }
+  # devise_for :users, controllers: {
+  #   sessions: 'users/sessions',
+  #   registrations: 'users/registrations'
+  # }
+
+  devise_for :users, skip: %i[registrations sessions]
 
   namespace :api, defaults: { format: 'json' } do
     resources :items
