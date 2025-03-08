@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord # rubocop:disable Style/Documentation
-  has_paper_trail
-
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_230435) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_16_015151) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
+  enable_extension "pg_stat_statements"
 
   create_table "oauth_access_tokens", force: :cascade do |t|
     t.integer "resource_owner_id"
@@ -37,11 +38,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_230435) do
     t.string "source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "linked_data", default: {}
     t.index "to_tsvector('english'::regconfig, (brand_name)::text)", name: "products_brand_name_full_text_index", using: :gin
     t.index "to_tsvector('english'::regconfig, (name)::text)", name: "products_name_full_text_index", using: :gin
+    t.index "to_tsvector('english'::regconfig, linked_data)", name: "products_linked_data_full_text_index", using: :gin
     t.index "to_tsvector('english'::regconfig, properties)", name: "products_properties_full_text_index", using: :gin
     t.index ["brand_name"], name: "index_products_on_brand_name"
     t.index ["gtin"], name: "index_products_on_gtin", unique: true
+    t.index ["linked_data"], name: "index_products_on_linked_data", using: :gin
     t.index ["name"], name: "index_products_on_name"
     t.index ["properties"], name: "index_products_on_properties"
   end

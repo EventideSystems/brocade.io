@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.4.1'
+ruby '3.4.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 8.0'
@@ -43,14 +43,14 @@ gem 'recaptcha'
 gem 'api-pagination'
 gem 'pagy'
 
-gem 'paper_trail'
-
 gem 'mailjet'
 
 gem 'net-http' # Silence spurious warnings, see https://github.com/ruby/net-protocol/issues/10
 # gem 'rswag'
 
 gem 'csv'
+
+gem 'data_migrate'
 
 group :development, :test do
   gem 'brakeman'

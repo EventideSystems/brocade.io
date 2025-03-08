@@ -3,6 +3,7 @@
 HEROKU_PRODUCTION_DEPLOY = <<~BASH
   git push heroku-production main && \
   heroku run rake db:migrate -a brocade-io && \
+  heroku run rake data:migrate -a brocade-io && \
   heroku restart -a brocade-io
 BASH
 

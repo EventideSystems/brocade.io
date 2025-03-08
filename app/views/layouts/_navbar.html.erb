@@ -3,11 +3,11 @@
     <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
       <div class="flex flex-1 items-center md:absolute md:inset-y-0 md:left-0">
         <div class="flex w-full items-center justify-between md:w-auto">
-          <%= link_to root_path do %>
+          <%= link_to root_path, aria: { hidden: true } do %>
             <span class="sr-only">Brocade.io</span>
             <span class="text-black dark:text-orange-400"><%= render 'barcode' %></span>
           <% end %>
-          <div class="-mr-2 flex items-center md:hidden">
+          <%# <div class="-mr-2 flex items-center md:hidden">
             <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-50 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
               <!-- Heroicon name: outline/bars-3 -->
@@ -15,7 +15,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
             </button>
-          </div>
+          </div> %>
         </div>
       </div>
       <div class="hidden md:flex md:space-x-10">

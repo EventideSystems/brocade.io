@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord # rubocop:disable Style/Documentation
-  has_paper_trail
-
   validates :gtin, presence: true, uniqueness: true
   validates :name, presence: true
 

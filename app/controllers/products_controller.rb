@@ -4,7 +4,7 @@
 class ProductsController < ApplicationController
   include ProductSearch
 
-  before_action :authenticate_user!, except: %i[index show destroy]
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
