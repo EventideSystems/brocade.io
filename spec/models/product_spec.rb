@@ -38,9 +38,9 @@ RSpec.describe Product, type: :model do
         <<~SQL.squish.tr("\n", ' ').gsub(/\s$/, '')
           SELECT "products".* FROM "products"
           WHERE
-          (to_tsvector('english', products.properties) @@ to_tsquery('foo:* & bar:*')
-          OR to_tsvector('english', products.name) @@ to_tsquery('foo:* & bar:*')
-          OR to_tsvector('english', products.brand_name) @@ to_tsquery('foo:* & bar:*'))
+          (to_tsvector('english', products.linked_data) @@ to_tsquery('english', 'foo:* & bar:*')
+          OR to_tsvector('english', products.name) @@ to_tsquery('english', 'foo:* & bar:*')
+          OR to_tsvector('english', products.brand_name) @@ to_tsquery('english', 'foo:* & bar:*'))
         SQL
       end
 
@@ -54,9 +54,9 @@ RSpec.describe Product, type: :model do
         <<~SQL.squish.tr("\n", ' ').gsub(/\s$/, '')
           SELECT "products".* FROM "products"
           WHERE
-          (to_tsvector('english', products.properties) @@ to_tsquery('foo:* & \\&:* & bar:*')
-          OR to_tsvector('english', products.name) @@ to_tsquery('foo:* & \\&:* & bar:*')
-          OR to_tsvector('english', products.brand_name) @@ to_tsquery('foo:* & \\&:* & bar:*'))
+          (to_tsvector('english', products.linked_data) @@ to_tsquery('english', 'foo:* & \\&:* & bar:*')
+          OR to_tsvector('english', products.name) @@ to_tsquery('english', 'foo:* & \\&:* & bar:*')
+          OR to_tsvector('english', products.brand_name) @@ to_tsquery('english', 'foo:* & \\&:* & bar:*'))
         SQL
       end
 

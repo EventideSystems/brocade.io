@@ -26,9 +26,9 @@ class Product < ApplicationRecord # rubocop:disable Style/Documentation
   }
 
   FULL_TEXT_SEARCH_SQL = <<~SQL.squish
-    to_tsvector('english', products.properties) @@ to_tsquery(:terms)
-    OR to_tsvector('english', products.name) @@ to_tsquery(:terms)
-    OR to_tsvector('english', products.brand_name) @@ to_tsquery(:terms)
+    to_tsvector('english', products.linked_data) @@ to_tsquery('english', :terms)
+    OR to_tsvector('english', products.name) @@ to_tsquery('english', :terms)
+    OR to_tsvector('english', products.brand_name) @@ to_tsquery('english', :terms)
   SQL
 
   private_constant :FULL_TEXT_SEARCH_SQL
