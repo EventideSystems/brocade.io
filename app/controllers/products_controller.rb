@@ -9,6 +9,13 @@ class ProductsController < ApplicationController
 
   def index
     @pagy, @products = product_search(params)
+
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: @products.map(&:linked_data)
+      end
+    end
   end
 
   def show # rubocop:disable Metrics/MethodLength
@@ -20,7 +27,9 @@ class ProductsController < ApplicationController
     else
       respond_to do |format|
         format.html
-        format.json
+        format.json do
+          render json: @product
+        end
       end
     end
   end

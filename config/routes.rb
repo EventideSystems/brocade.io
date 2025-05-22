@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json' } do
     resources :items
+    resources :products, only: %i[index show], controller: '/products', defaults: { format: 'json' }
   end
 
   resources :products
