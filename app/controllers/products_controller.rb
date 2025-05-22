@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
       respond_to do |format|
         format.html
         format.json do
-          render json: @product
+          render json: @product.linked_data
         end
       end
     end
