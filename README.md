@@ -3,9 +3,14 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
 
-# brocade.io
+# Brocade.io
 
-Open GTIN / barcode &amp; product database
+A free and open GTIN / barcode &amp; product database. Visit [brocade.io](https://brocade.io/) to access.
+
+If you find the service useful, please consider supporting the development and hosting of Brocade.io:
+
+[:heart: Sponsor this project on Github](https://github.com/sponsors/EventideSystems)
+[:coffee: Buy us a coffee](https://buymeacoffee.com/eventidesystems)
 
 ## Project Background
 
