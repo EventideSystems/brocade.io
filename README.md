@@ -10,6 +10,7 @@ A free and open GTIN / barcode &amp; product database. Visit [brocade.io](https:
 If you find the service useful, please consider supporting the development and hosting of Brocade.io:
 
 [:heart: Sponsor this project on Github](https://github.com/sponsors/EventideSystems)
+
 [:coffee: Buy us a coffee](https://buymeacoffee.com/eventidesystems)
 
 ## Project Background
