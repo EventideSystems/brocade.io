@@ -46,7 +46,10 @@ gem 'pagy'
 gem 'mailjet'
 
 gem 'net-http' # Silence spurious warnings, see https://github.com/ruby/net-protocol/issues/10
-# gem 'rswag'
+
+# API documentation
+gem 'rswag-api'
+gem 'rswag-ui'
 
 gem 'csv'
 
@@ -66,6 +69,7 @@ group :development, :test do
   # gem 'pry-coolline'
   gem 'pry-stack_explorer'
   gem 'rspec-rails'
+  gem 'rswag-specs'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'

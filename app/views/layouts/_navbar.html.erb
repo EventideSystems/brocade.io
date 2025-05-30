@@ -24,8 +24,8 @@
         <%# <%- if user_signed_in? -%>
           <%#= desktop_link_to 'Add Product', new_product_path %>
         <%#- end -%>
-        <%= desktop_link_to 'Documentation', documentation_path %>
-        <%= desktop_link_to 'Github Project', 'https://github.com/EventideSystems/brocade.io', target: :blank %>
+        <%= desktop_link_to 'API', documentation_path %>
+        <%= desktop_link_to 'Github', 'https://github.com/EventideSystems/brocade.io', target: :blank %>
       </div>
       <div class="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end md:space-x-10 dark:text-white">
         <%- if user_signed_in? -%>
@@ -50,6 +50,8 @@
               )
             %>
           <% end %>
+
+          <a href="https://www.buymeacoffee.com/eventidesystems" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" class="h-12 w-auto" xstyle="height: 60px !important;width: 217px !important;" ></a>
         </span>
       </div>
     </nav>
@@ -109,6 +111,8 @@
           )
         %>
       <% end %>
+      <a href="https://www.buymeacoffee.com/eventidesystems" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" class="h-8 w-auto"></a>
+
     </div>
   </div>
 </div>
